@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+<title>go baby go</title>
+</head>
+<!-- <%= @entries = Entry.all %> -->
+
+<% for entry in @entries %>
+  <h2><%= entry.title %></h2>
+    <p> <%= entry.date %>
+    </p>
+    <p>
+      <%= entry.contents %>
+    </p>
+    <% end %>
+
+<body>
+
+</body>
+</hmtl>
