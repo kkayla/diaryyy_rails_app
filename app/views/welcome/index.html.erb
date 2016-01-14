@@ -1,18 +1,30 @@
 <h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<!-- <p>Find me in app/views/welcome/index.html.erb</p> -->
 
-<h1>My Widdle RailsGirls Diary</h1>
+  <h1>My Widdle RailsGirls Diary</h1>
+  <!-- <p>
+    <%= link_to("new diary entry", new_entry_path) %>
+
+  </p>
+
   <div>
-    <% for entry in @entries %>
-      <h2><%= entry.title %></h2>
-        <p> <%= entry.date %>
-        </p>
-        <p>
-          <%= entry.contents %>
-        </p>
-        <% end %>
-  </div>
+      <% for entry in @entries %>
+        <h2><%= entry.title %></h2>
+      <% end %> -->
+
 
   <% for url, name in @websites %>
     <li><a href="<%= url %>"><%= name %></a></li>
   <% end %>
+  <h1>all my diary posts</h1>
+  <p>
+    <%= link_to("new diary entry", new_entry_path) %>
+
+  </p>
+  <% @entries.each do |entry| %>
+  <a href="<%link_to "show this entry" %>"><h2><%= entry.title %></h2></a>
+  <h2><%= link_to "show this entry", entry_path(entry) %></h2>
+  <h3><%= link_to "edit this entry", edit_entry_path(entry) %></h3>
+  <% end %>
+
+</div>

@@ -4,14 +4,28 @@
 </head>
 <!-- <%= @entries = Entry.all %> -->
 
-<% for entry in @entries %>
+<h1>all my diary posts</h1>
+<% @entries.each do |entry| %>
+<a href="<%link_to "show this entry" %>"><h2><%= entry.title %></h2></a>
+<h2><%= link_to "show this entry", entry_path(entry) %></h2>
+<h3><%= link_to "edit this entry", edit_entry_path(entry) %></h3>
+<% end %>
+
+<p>
+  <%= link_to("new diary entry", new_entry_path) %>
+
+</p>
+
+  <!-- <% for entry in @entries %>
   <h2><%= entry.title %></h2>
-    <p> <%= entry.date %>
-    </p>
-    <p>
-      <%= entry.contents %>
-    </p>
-    <% end %>
+      <p><%= entry.date %></p>
+      <p><%= entry.contents %></p>
+
+    <% end %> -->
+<p>
+  <%= link_to("new diary entry", new_entry_path) %>
+
+</p>
 
 <body>
 

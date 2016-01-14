@@ -1,0 +1,11 @@
+<%= form_for(Entry.new) do |form| %>
+  <p><%=form.label("title") %></p>
+  <p><%= form.text_field("title") %></p>
+  <p><%= form.label("scribble in here") %></p>
+  <p><%= form.text_area("contents")%></p>
+  <p><%= form.submit %></p>
+  <% end %>
+  <p><%= link_to("back to ALL entrieS", entries_path) %></p>
+  <p>
+    <%= link_to("back to THIS entry", entry_path(@entry)) %>
+  </p>
